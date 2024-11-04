@@ -23,11 +23,11 @@ void printBill(OrderItem order[], int orderCount);
 
 int main() {
     MenuItem menu[] = {
-        {"Burger", 5.50},
-        {"Pizza", 8.00},
-        {"Pasta", 7.25},
-        {"Salad", 4.00},
-        {"Soda", 1.50}
+        {"Burger", 115},
+        {"Pizza", 100},
+        {"Pasta", 169},
+        {"Salad", 205},
+        {"Soda", 73}
     };
     int menuSize = sizeof(menu) / sizeof(menu[0]);
 
@@ -69,7 +69,7 @@ int main() {
 void displayMenu(MenuItem menu[], int size) {
     printf("\nMenu:\n");
     for (int i = 0; i < size; i++) {
-        printf("%d. %s - $%.2f\n", i + 1, menu[i].name, menu[i].price);
+        printf("%d. %s - ₹%.2f\n", i + 1, menu[i].name, menu[i].price);
     }
 }
 
@@ -101,7 +101,7 @@ void printBill(OrderItem order[], int orderCount) {
     printf("\nBill:\n");
     for (int i = 0; i < orderCount; i++) {
         float itemTotal = order[i].item.price * order[i].quantity;
-        printf("%s x %d = $%.2f\n", order[i].item.name, order[i].quantity, itemTotal);
+        printf("%s x %d = ₹%.2f\n", order[i].item.name, order[i].quantity, itemTotal);
         total += itemTotal;
     }
     printf("Total: $%.2f\n", total);
